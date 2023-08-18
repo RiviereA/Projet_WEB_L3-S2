@@ -1,0 +1,1249 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#Credit{
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    color: white;
+}
+
+.Surface {
+	position: absolute;
+	height: 500px;
+	width: 500px;
+	z-index: 5;
+	/*border: 2px solid red;*/
+}
+	
+
+@media screen and (min-width: 200px) and (max-width: 1050px) {
+	.Surface {
+		position: absolute;
+		height: 250px;
+		width: 250px;
+		z-index: 5;
+		/*border: 2px solid red;*/
+	}
+
+	object{
+		height:250px;
+		width:250px;
+	}
+}
+
+header{
+    width: 100%;
+    height: 10vh;
+    background: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logo{
+    /* positionnement du logo avec index pour pouvoir éventuellement superposer des éléments malgré le flux */
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    top: 2.5%;
+    left: 2.5%;
+    background-image: url(Images/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    z-index: 10;
+}
+
+/* css du menu */
+nav{
+    height: 100%;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul{
+    margin: 0 auto;
+    height: 80%;
+    width: 80%;
+    background: #efefef; 
+    background: linear-gradient(to top, #efefef 0%, #bbbbbb 100%);  
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+    border-radius: 10px;  
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+}
+
+nav ul li{
+    position: relative;
+    height: 100%;
+    max-width: 24%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;  
+
+}
+
+
+nav ul li:hover{
+    background: #4b545f;
+    background: linear-gradient(to top, #4f5964 0%, #5f6975 40%);
+    background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+    background: -webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%);
+} 
+
+nav ul li a {
+    text-align: center;
+    padding: 25px 40px;
+    color: #757575; text-decoration: none;
+    font-size: 2vh;
+
+}
+
+nav ul li:hover a{
+    color: #fff;
+}
+
+#sousmenuC{
+    border-radius: 0;
+    position: absolute; 
+    z-index: 10;
+    display: none;
+    height: 150%;
+    min-width: 105%;
+}
+
+#sousmenuL{
+    border-radius: 0;
+    position: absolute; 
+    z-index: 10;
+    display: none;
+    height: 400%;
+    min-width: 105%;
+}
+
+nav ul li:hover > #sousmenuC, nav ul li:hover > #sousmenuL{
+    border-radius: 0;
+    position: absolute; 
+    z-index: 10;
+    display: flex;
+    background: #5f6975;
+    flex-direction: column;
+    align-content: stretch;
+    width: 100%;
+    top: 100%;
+}
+
+.enfant{
+    background: 0;
+    height:;
+    min-width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    
+}
+
+nav ul #sousmenuC li a, nav ul #sousmenuL li a{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    margin: auto;
+    padding: 5px 5px;
+    font-size: 1.5vh;
+}   
+
+nav ul #sousmenuC li a:hover, nav ul #sousmenuL li a:hover {
+    color: #000;
+
+}
+
+
+@media screen and (max-width: 1050px)
+{
+    nav{
+        width: 80%;
+    }
+
+    nav ul li{
+    font-size: 1.5vh;
+    }
+
+    nav ul #sousmenuC li a, nav ul #sousmenuL li a{
+    font-size: 1vh;
+    margin:auto;
+    padding: 5px 5px;
+    text-align: center;
+    }
+}
+
+/* fin css menu */
+#contenu{
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    margin:0;
+    padding:0;
+    background-image: url(Images/fond.jpg);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+    background-size: cover; /* version standardisée */
+    display: flex;  /* ceci est incroyable pour l'alignement vertical */
+}
+
+#pied{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-color: black;
+}
+
+/* début css page accueil */
+#centrer{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+}
+
+/* div qui contient le texte informatif sur la connexion */
+#connexion{
+    color: white;
+    position: absolute;     /*pour la superposition*/
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    background-color: black;
+    z-index: 1;
+    opacity: 0.4;
+    border-radius: 4px;
+}
+
+/* div qui contient le texte informatif sur l'inscription */
+#inscription{
+    color: white;
+    position: absolute;     /*pour la superposition*/
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    background-color: black;
+    z-index: 1;
+    opacity: 0.4;
+    border-radius: 4px;
+}
+
+
+/* formulaires page principale */
+.coteG{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+}
+
+.coteD{
+    padding-top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+/* bouton de changement de formulaire */
+#con{
+    margin-right: 60px;
+    height: 4vh;
+    max-height: 4vh;
+    width: 15vh;
+    max-width: 15vh;
+    color: white;
+    font-size: 2vh;
+    background: #1abc9c;
+    border-radius: 4px;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+}
+
+#ins{
+    margin-left: 60px;
+    height: 4vh;
+    max-height: 4vh;
+    width: 15vh;
+    max-width: 15vh;
+    color: white;
+    font-size: 2vh;
+    background: #1abc9c;
+    border-radius: 4px;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+}
+
+#ins:hover, #con:hover{
+    background: #109177;
+}
+
+#h1G{
+    font-size: 3.5vh;
+    text-align: right;
+    margin-right: 60px;
+    margin-left: 100px;
+}
+
+#h1D{
+    font-size: 3.5vh;
+    text-align: left;
+    margin-left: 60px;
+    margin-right: 100px;
+}
+
+#txtG{
+    font-size: 2vh;
+    text-align: right;
+    margin-right: 60px;
+    margin-left: 100px;
+}
+
+#txtD{
+    font-size: 2vh;
+    margin-left: 60px;
+    margin-right: 100px;
+    text-align: left;
+}
+
+/* si on réduit trop la fenetre pour eviter les chevauchements */
+@media screen and (min-width: 200px) and (max-width: 1050px){
+    #con{
+        margin-right: 20px;
+        height: 2vh;
+        max-height: 2vh;
+        width: 7.5vh;
+        max-width: 7.5vh;
+        color: white;
+        font-size: 1.5vh;
+    }
+
+    #ins{
+        margin-left: 20px;
+        height: 2vh;
+        max-height: 2vh;
+        width: 7.5vh;
+        max-width: 7.5vh;
+        color: white;
+        font-size: 1.5vh;
+    }
+
+    #h1G{
+        font-size: 2.5vh;
+        text-align: right;
+        margin-right: 20px;
+        margin-left: 50px;
+    }
+
+    #h1D{
+        font-size: 2.5vh;
+        text-align: left;
+        margin-left: 20px;
+        margin-right: 50px;
+    }
+
+    #txtG{
+        font-size: 1vh;
+        text-align: right;
+        margin-right: 20px;
+        margin-left: 50px;
+    }
+
+    #txtD{
+        font-size: 1vh;
+        margin-left: 20px;
+        margin-right: 50px;
+        text-align: left;
+    }
+}
+
+@media screen and (min-height: 100px) and (max-height: 500px){
+    #con{
+        font-size: 1vh;
+    }
+
+    #ins{
+        font-size: 1vh;
+    }
+}
+
+/* css des formulaires de la page d'acceuil*/
+#formStyle2{
+    background: #efefef; 
+    background: linear-gradient(to top, #efefef 0%, #bbbbbb 100%);  
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 8%;
+    left: 15%;
+    width: 35%;
+    height: 84%;
+    min-width: 20%;
+    min-height: 50%;
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    z-index: 2;
+    border-radius: 4px;
+}
+
+.elementForm{
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 8vh;
+    margin-top: 2%;
+}
+
+#formulaireInscription, #formulaireConnexion{
+    position: absolute;
+    max-width: 80%;
+    min-width: 80%;
+    max-height: 100%;
+}
+
+#formulaireInscription label, #formulaireConnexion label{
+    font-size: 2vh;
+}
+
+#formulaireInscription input[type="text"],
+#formulaireInscription input[type="password"],
+#formulaireInscription input[type="email"],
+#formulaireConnexion input[type="text"],
+#formulaireConnexion input[type="password"],
+#formulaireConnexion input[type="email"]{
+    font-family: Georgia;
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 2vh;
+    margin-top: 0;
+    outline: 0;
+    width: 100%;
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    background-color: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;  
+}
+
+#formulaireInscription input[type="email"]:focus,
+#formulaireInscription input[type="password"]:focus, 
+#formulaireInscription input[type="text"]:focus, 
+#formulaireConnexion input[type="email"]:focus,
+#formulaireConnexion input[type="text"]:focus, 
+#formulaireConnexion input[type="password"]:focus{
+    background: #d2d9d0;
+}
+
+#formulaireInscription input[type="submit"],
+#formulaireConnexion input[type="submit"]{
+    margin: auto;
+    height: 4vh;
+    max-height: 4vh;
+    width: 15vh;
+    max-width: 15vh;
+    color: white;
+    font-size: 1.5vh;
+    background: #1abc9c;
+    border-radius: 4px;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+   
+}
+
+#formulaireInscription input[type="submit"]:hover,
+#formulaireConnexion input[type="submit"]:hover{
+    background: #109177;
+}
+
+@media screen and (max-width: 1050px){
+    #formulaireInscription label, #formulaireConnexion label{
+        font-size: 1.5vh;
+    }
+
+    #formulaireInscription input[type="text"],
+    #formulaireInscription input[type="password"],
+    #formulaireInscription input[type="email"],
+    #formulaireConnexion input[type="text"],
+    #formulaireConnexion input[type="password"],
+    #formulaireConnexion input[type="email"]{
+        font-size: 1.5vh;
+    }
+
+    #formulaireInscription input[type="submit"],
+    #formulaireConnexion input[type="submit"]{
+        max-width: 20vh;
+        min-width: 10vh;
+        margin-right: 20px;
+        height: 2vh;
+        min-height: 4vh;
+        width: 7.5vh;
+        font-size: 0.9vh;
+    }
+}    
+
+@media screen and (max-height: 500px){
+    #formulaireInscription label, #formulaireConnexion label{
+        font-size: 1vh;
+        float: left;
+    }
+
+    #formulaireInscription input[type="text"],
+    #formulaireInscription input[type="password"],
+    #formulaireInscription input[type="email"],
+    #formulaireConnexion input[type="text"],
+    #formulaireConnexion input[type="password"],
+    #formulaireConnexion input[type="email"]{
+        font-size: 1vh;
+        float: left;
+    }
+
+    #formulaireInscription input[type="submit"],
+    #formulaireConnexion input[type="submit"]{
+        float: left;
+        min-width: 10vh;
+        min-height: 4vh; 
+
+    }  
+
+    .elementForm{
+        margin-top: 0;
+        max-width: 100%;
+        min-width: 100%;
+        max-height: 4vh;
+        overflow: hidden;
+    }  
+}
+
+/* chat general d'avant connexion a garder ou non */
+#chatG{
+    position: absolute;
+    top: 10%;
+    left : 5%;
+    height: 50%;
+    width: 80%;
+    background: #efefef; 
+    background: linear-gradient(to top, #efefef 0%, #bbbbbb 100%);  
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+}
+/* fin css page acceuil */
+
+/* css page partie */
+#formJoin{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    right: 20%;
+    top :16%;
+    height: 60%;
+    width: 20%;
+    max-width: 30%;
+    background: #efefef; 
+    background: linear-gradient(to top, #efefef 0%, #bbbbbb 100%);  
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+    padding: 2%;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    font-family: Georgia;
+}
+
+#formCreate{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    left: 20%;
+    top :16%;
+    height: 60%;
+    width: 20%;
+    max-width: 30%;
+    background: #efefef; 
+    background: linear-gradient(to top, #efefef 0%, #bbbbbb 100%);  
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+    padding: 2%;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    font-family: Georgia;
+}
+
+.elementCreate{
+    max-height: 80%;
+    max-width: 90%;
+    min-width: 80%;
+}
+
+.elementCreate2{
+    max-height: 15%;
+    max-width: 90%;
+    min-width: 80%;
+}
+
+.formStyle1 fieldset{
+    display: flex;
+    flex-direction: column;
+    max-height: 80%;
+    border: none;
+    font-size: 1vh;
+}
+
+.formStyle1 legend{
+    font-size: 2vh;
+    margin-bottom: 10px;
+}
+
+.formStyle1 input[type="text"]{
+    font-family: Georgia;
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    width: 100%;
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    background-color: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;  
+}
+
+.formStyle1 input[type="text"]:focus, .formStyle1 input[type="radio"]:focus{
+    background: #d2d9dd;
+}
+
+.formStyle1 input[type="button"]{
+    margin: auto;
+    height: 4vh;
+    max-height: 4vh;
+    width: 15vh;
+    max-width: 10vh;
+    color: white;
+    font-size: 1.5vh;
+    background: #1abc9c;
+    border-radius: 4px;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+}
+
+.formStyle1 input[type="button"]:hover{
+    background: #109177;
+}
+
+@media screen and (max-width: 1050px){
+    #formJoin{
+        right: 5%;
+        top :10%;
+        height: 80%;
+        width: 40%;
+        min-width: 40%;
+    }
+
+    #formCreate{
+        left: 5%;
+        top :10%;
+        height: 80%;
+        width: 40%;
+        min-width: 40%;
+    }
+
+    .elementCreate{
+    max-height: 90%;
+    min-height: 60%;
+    }
+
+    .formStyle1 legend{
+    margin-bottom: 10px;
+    }
+
+    .formStyle1 input[type="button"]{
+        max-width: 8vh;
+    }  
+
+    .formStyle1 input[type="text"]{
+        max-height: 2vh;
+    }
+}
+
+@media screen and (max-height: 850px){
+    #formJoin{
+        right: 5%;
+        top :10%;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 80%;
+        min-width: 40%;
+    }
+
+    #formCreate{
+        left: 5%;
+        top :10%;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 80%;
+        min-width: 40%;
+    }
+
+    .elementCreate{
+        position: absolute;
+        right: 5%;
+        left: 5%;
+        top: 5%;
+        max-height: 75%;
+        min-height: 75%;
+        max-width: 90%;
+        min-width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .elementCreate2{
+        position: absolute;
+        right: 5%;
+        left: 5%;
+        bottom: 5%;
+        min-height: 10%;
+        max-height: 10%;
+        max-width: 25%;
+        min-width: 25%;
+    }
+
+    .formStyle1 legend{
+        margin-left:2%;
+        font-size: 2.5vh;
+    }
+
+    .gauche{
+        position: absolute;
+        min-height: 60%;
+        max-height: 60%;
+        max-width: 40%;
+        min-width: 40%;
+        top:15%;
+        left: 5%;
+        font-size: 2vh;
+    }
+
+    .droite{
+        position: absolute;
+        min-height: 60%;
+        max-height: 60%;
+        max-width: 40%;
+        min-width: 40%;
+        top:15%;
+        right: 5%;
+        font-size: 2vh;
+    }
+
+    .bas{
+        font-size: 2vh;
+        position: relative;
+        bottom: -18vh;
+    }
+
+    .formStyle1 input[type="text"]{
+        height: 3vh;
+    }
+
+    .formStyle1 input[type="button"]{
+        margin-left: 15%;
+        position: absolute;
+    }
+}
+
+#chatG{
+    position: absolute;
+    top: 10%;
+    left : 5%;
+    height: 50%;
+    width: 80%;
+    background: #efefef; 
+    background: linear-gradient(to top, #efefef 0%, #bbbbbb 100%);  
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+}
+
+#envoiG{
+    position: absolute;
+    bottom: 0;
+    right: -2vh;
+    border-radius: 10px;
+    min-width: 6vh;
+    height: 2vh;
+    min-height: 4vh;
+    font-size: 1.2vh;
+    color: black;
+    background: #efefef; 
+    background: linear-gradient(to top, #efefef 0%, #bbbbbb 100%);  
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+    border: solid #FFFFFF 2px;
+    text-decoration: none;
+}
+
+/* css des tableaus*/
+.ConteneurTableau{
+    position: absolute;
+    height: 80%;
+    width: 90%;
+    left: 5%;
+    top: 10%;
+    overflow: scroll;
+}
+.table{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: medium solid black;
+    border-collapse: collapse;
+}
+
+th{
+    border-bottom: medium solid black;
+    padding: 5px;
+    text-align: center;
+    background: #efefef;  
+}
+
+td{
+    border: thin solid black;
+    padding: 5px;
+    text-align: center;
+    background: #efefef; 
+    text-align: center; 
+}
+
+/* css Mon Compte */
+
+
+
+
+/* css page regles */
+.page{
+    border-radius: 10px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 3%;
+    margin-right: 3%;
+    background: #efefef; 
+    background: linear-gradient(to top, #efefef 0%, #bbbbbb 100%);  
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%);
+    overflow: scroll;
+}
+
+div.figure
+{
+text-align:center;
+}
+
+div.figure td
+{
+text-align:center;
+vertical-align:top;
+padding-left:8px;
+padding-right:8px;
+padding-top:0px;
+padding-bottom:0px;
+}
+
+div.figure td p
+{
+padding-top:0px;
+margin-top:0px;
+}
+
+/*css contact */
+#conteneurContact{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#Contact{
+    position: relative;
+    height: 80%;
+    width: 50%;
+    border-radius: 10px;
+    background: #efefef; 
+    background: linear-gradient(to top, #efefef 0%, #bbbbbb 100%);  
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%);
+}
+
+#titreC{
+    text-align: center;
+    font-size: 3vh;
+}
+
+#formContact{
+    position: relative;
+    height: 80%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+
+}
+
+#contG{
+    position: relative;
+    height: 100%;
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#contD{
+    position: relative;
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.EFC{
+    display: inline;
+    position: relative;
+    min-height: 30%;
+
+}
+
+#messageC{
+    position: absolute;
+    bottom: -6vh;
+    left:0;
+    max-height: 80%;
+    max-width: 100%;
+    padding: 0;
+    overflow: scroll;
+}
+
+#reset{
+    margin-right: 60px;
+    height: 4vh;
+    max-height: 4vh;
+    width: 15vh;
+    max-width: 15vh;
+    color: white;
+    font-size: 2vh;
+    background: #1abc9c;
+    border-radius: 4px;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+}
+
+#envoiC{
+    margin-top: 3vh;
+    margin-right: 60px;
+    height: 4vh;
+    max-height: 4vh;
+    width: 15vh;
+    max-width: 15vh;
+    color: white;
+    font-size: 2vh;
+    background: #1abc9c;
+    border-radius: 4px;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+}
+
+#formContact input[type="text"], #formContact input[type="email"]{
+    font-family: Georgia;
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    width: 100%;
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    background-color: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;  
+}
+
+@media screen and (max-width: 1050px){
+    #titreC{
+    font-size: 2vh;
+    }
+
+    #formContact input[type="text"], #formContact input[type="email"]{
+        font-size: 1.5vh;
+    }
+
+    #formContact label{
+        font-size: 1.5vh;
+    }
+
+    #reset{
+    width: 8vh;
+    max-width: 8vh;
+    color: white;
+    font-size: 1.5vh;
+    background: #1abc9c;
+    border-radius: 4px;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+    }
+
+    #envoiC{
+    width: 8vh;
+    max-width: 8vh;
+    color: white;
+    font-size: 1.5vh;
+    background: #1abc9c;
+    border-radius: 4px;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+    }
+}
+
+
+
+/*page du jeu*/
+#jeu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+}
+
+/* panneau de droite pendant une partie */
+#toolsIG{
+    background: #efefef; 
+    background: linear-gradient(to top, #efefef 0%, #bbbbbb 100%);  
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+}
+
+#infoIG{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    top: 5%;
+    right: 5%;
+    height: 90%;
+    width: 30%;
+}
+
+#infoIG input[type="button"],#infoIG input[type="submit"]{
+    margin-top:20px;
+    height: 4vh;
+    max-height: 4vh;
+    width: 15vh;
+    max-width: 10vh;
+    color: white;
+    font-size: 1.5vh;
+    background: #1abc9c;
+    border-radius: 4px;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+}
+
+@media screen and (max-width: 600px){
+    #infoIG input[type="button"],#infoIG input[type="submit"]{
+        margin-top:10px;
+        height: 4vh;
+        max-height: 4vh;
+        width: 5vh;
+        max-width: 5vh;
+        color: white;
+        font-size: 1vh;
+    }
+}
+
+#boutonsIG{
+    height: 50%;
+}
+
+#timer{
+    height: 50%;
+}
+
+/* chat des spec in game */
+#chatSpec{
+    position: absolute;
+    top: 10%;
+    left : 5%;
+    height: 50%;
+    width: 80%;
+    background: #efefef; 
+    background: linear-gradient(to top, #efefef 0%, #bbbbbb 100%);  
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+}
+
+/* div qui contient le chat in game */
+#chatbox{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    height: 90%;
+    width: 50%;
+    background-color: black;
+}
+
+/* panneau qui contient le chat in game */
+#chatIG{
+    position: absolute;
+    margin: 5%;
+    padding: 10px;
+    background: #fff;
+    height: 80%;
+    width: 83.5%;
+}
+
+/* div qui contient le formulaire d'envoi d'un message in game */
+#formMsgIG{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 5%;
+    bottom: 2.5%;
+    width: 90%;
+    height: 8.5%;
+}
+
+/* contenu du message à envoyer IG */
+#userMsg{
+    position: absolute;
+    top: 0;
+    left : 0;
+    height: 90%;
+    width: 65%;
+    background: #efefef; 
+    background: linear-gradient(to top, #efefef 0%, #bbbbbb 100%);  
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+}
+
+#submitMsg{
+    position: absolute;
+    right: 0;
+    height: 4vh;
+    max-height: 4vh;
+    width: 8vh;
+    max-width: 8vh;
+    color: white;
+    font-size: 1.5vh;
+    background: #1abc9c;
+    border-radius: 4px;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px; 
+}
+
+@media screen and (max-width: 1050px){
+    #submitMsg{
+        width: 5vh;
+        max-width: 5vh;
+        font-size: 1.2vh;
+       
+    }
+}
+
+@media screen and (max-width: 550px){
+    #submitMsg{
+        width: 3.5vh;
+        max-width: 3.5vh;
+        font-size: 0.8vh;
+       
+    }
+}
+
+/* formulaire d'envoi du chatIG pour les specs*/
+#messG{
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    height: 20%;
+    width: 90%;
+}
+
+/* texte à envouyer au chatIG pour les specs*/
+#messageG{
+    position: absolute;
+    top: 0;
+    left : 0;
+    height: 90%;
+    width: 88.5%;
+    background: #efefef; 
+    background: linear-gradient(to top, #efefef 0%, #bbbbbb 100%);  
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+}
+
+
+
