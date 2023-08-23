@@ -1,4 +1,4 @@
-# Projet de développement d'application web (Licence 3 - semestre 2)
+# Projet de développement d'application web (Licence 3 - Semestre 2)
 
 ## Présentation du projet
 
